@@ -112,7 +112,7 @@ function DisplayQ(){
             <td>${random}</td>
             </tr><table>
             <b>Save this QR code and place it on the package</b>
-            <img src="./qr_code.jpg" class="image"/>
+            <img src="https://ibb.co/wMSZKm7" class="image"/>
             `;
         document.getElementById('show').innerHTML = str;
         }).catch(function (error) {
