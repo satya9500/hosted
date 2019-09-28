@@ -110,14 +110,18 @@ function DisplayQ(){
             <td>${document.getElementById('name').value }</td>
             <td>${document.getElementById('address').value }</td>
             <td>${random}</td>
-            </tr>`;
+            </tr><table>
+            <b>Save this QR code and place it on the package</b>
+            <img src="qr_code.jpg" class="image"/>
+            `;
         document.getElementById('show').innerHTML = str;
         }).catch(function (error) {
             console.error(error);
         })
         var email = document.getElementById("email").value;
+        var name = document.getElementById("name").value;
         var xhr = new XMLHttpRequest();
-        xhr.open('GET', "https://us-central1-pitney-a57f5.cloudfunctions.net/sendMail?dest=" + email + "&uid=" + random + "&oid=" + doc.data().position, true);
+        xhr.open('GET', "https://us-central1-pitney-a57f5.cloudfunctions.net/sendMail?dest=" + email + "&uid=" + random + "&oid=" + doc.data().position+"&name="+name, true);
         xhr.send();
         if (xhr.status = 200) {
             window.alert("Mail has been sent!");
